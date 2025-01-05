@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1 id="edit" style="text-align: center;">Metrooo!!</h1> 
+  <center> <button id="start"><b>start</b></button>
+    <button id="stop"><b>stop</b></button></center>
+</body>
+<script>
+   let hex='1234567890ABCDEF'
+
+let rnd=Math.floor(Math.random()*16)
+let a;
+let b;
+   
+   let startMetro=function(){
+    let current=0;
+    const value=["If Young Metro don't trust you imma shoot you!",'Young Metro,Young Metro,Young Metro, 3 times','Metro Boomin want some more, N!gga.','Metro Boomin make it Boom.','This beat is so so Metro!','Metro be boomin..',]
+   b= setInterval(()=> {
+    current=(current+1)% value.length;
+     document.getElementById("edit").textContent =value[current]
+   console.log(value[(current+1)% value.length])
+  },2000) 
+   }
+
+
+
+
+    
+
+let startf=function(){
+    let hexCode='#'
+    for (let index = 0; index < 6; index++){
+    rnd=Math.floor(Math.random()*16)
+    hexCode += hex[rnd];
+   }
+    document.body.style.backgroundColor=hexCode;
+}
+
+
+
+
+document.getElementById('start').addEventListener('click',()=>
+{
+   a= setInterval(startf,2000);
+   startMetro();
+})
+
+
+document.getElementById('stop').addEventListener('click',()=>
+{
+    clearInterval(a);
+    clearInterval(b);
+})
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
